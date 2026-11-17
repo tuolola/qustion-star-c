@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+**English** | [简体中文](./readme-zh-cn.md)
 
-## Getting Started
+<p align="center">
+  <img src="./docs/brand/logo.png" width="120" height="120" alt="Questionnaire Star · Respondent logo" />
+</p>
 
-First, run the development server:
+<div align="center">
+
+# Questionnaire Star · Respondent
+
+<p><strong>A small starting point for the survey respondent experience</strong></p>
+
+<p>
+  <a href="https://github.com/tuolola/qustion-star-c"><img src="https://img.shields.io/badge/GitHub-Repository-2563eb?style=for-the-badge" alt="GitHub repository" /></a>
+  <a href="https://gitee.com/guolola/qustion-star-c"><img src="https://img.shields.io/badge/Gitee-Original-0f766e?style=for-the-badge" alt="Original Gitee repository" /></a>
+</p>
+
+<p>
+  <img src="https://img.shields.io/badge/Frontend-Next.js%2015-111827?style=flat-square" alt="Frontend: Next.js 15" />
+  <img src="https://img.shields.io/badge/UI-React%2019-2563eb?style=flat-square" alt="UI: React 19" />
+  <img src="https://img.shields.io/badge/Language-TypeScript-3178c6?style=flat-square" alt="Language: TypeScript" />
+  <img src="https://img.shields.io/badge/Status-Early%20prototype-0f766e?style=flat-square" alt="Status: Early prototype" />
+</p>
+
+</div>
+
+## Overview
+
+An early questionnaire respondent frontend built with Next.js App Router, React and TypeScript. The current source renders a questionnaire page at `/question/[id]` with sample text-input and single-choice fields. It is a learning and development prototype, rather than a complete survey delivery service.
+
+## Capabilities
+
+| Area | Scope |
+| --- | --- |
+| Question route | Dynamic questionnaire route with a hidden questionnaire ID. |
+| Text input | A reusable input field with a title and placeholder. |
+| Single choice | Radio options with vertical or horizontal layout properties. |
+| Scoped styles | CSS Modules keep question and page styles organized. |
+
+## Quick Start
+
+Use a Node.js version compatible with the pinned Next.js 15 dependency.
 
 ```bash
+git clone https://github.com/tuolola/qustion-star-c.git
+cd qustion-star-c
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000/question/demo`. There is no root `src/app/page.tsx` homepage in the current source; start with the questionnaire route.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Repository Layout
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Path | Responsibility |
+| --- | --- |
+| `src/app/question/[id]/` | Sample questionnaire page and page styles |
+| `src/components/QuestionInput/` | Text-input component |
+| `src/components/QuestionRadio/` | Single-choice component |
+| `src/app/layout.tsx` | Root application layout |
 
-## Learn More
+## Common Commands
 
-To learn more about Next.js, take a look at the following resources:
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Start development server |
+| `npm run build` | Create production build |
+| `npm run start` | Serve a completed production build |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Current Scope and Configuration
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The sample fields are currently hardcoded. The form has an empty action and no implemented submission API, persistence or results page. Connect a backend and add submission validation before collecting real responses. The existing `lint` script invokes `next lint`; its compatibility with the pinned framework needs a separate tooling update. The companion [builder repository](https://github.com/tuolola/questionnaire-star---react) is a separate frontend; a shared end-to-end backend is not included here.
 
-## Deploy on Vercel
+## Visual Identity
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+A teal survey sheet, a clear check mark and a small star represent the respondent completing a form.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License and Third-Party Material
+
+The source repository does not provide a project-level root license. Public visibility alone does not grant a general open-source license; confirm permission with the maintainer before reuse or redistribution. Third-party code, SDKs, fonts and assets retain their own included licenses.
